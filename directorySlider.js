@@ -22,7 +22,7 @@
             directory: null,
             numslides: null,
             padleft: '',
-            starton: 0,
+            starton: 1,
             height: null,
             width: null
         }, options || {});
