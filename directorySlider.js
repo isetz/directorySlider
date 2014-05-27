@@ -22,6 +22,7 @@
             directory: null,
             numslides: null,
             padleft: '',
+            starton: 0,
             height: null,
             width: null
         }, options || {});
@@ -38,16 +39,19 @@
 
         // Get slides
         var slides = [],
-            slideNumber = 1,
+            slideNumber = config.numslides,
             pad = '';
 
-        while (slideNumber <= config.numslides) {
+        if(config.starton == 0)
+            slideNumber = config.numslides - 1;
+
+        while (slideNumber >= config.starton) {
             if (config.padleft != '') {
                 pad = String(config.padleft + slideNumber).slice(-config.padleft.length);
             }
 
             slides.push('<img src="' + config.directory + config.filebase + (config.padleft != ''? pad:slideNumber) + '.' + config.extension + '" />');
-            slideNumber++;
+            slideNumber--;
         }
 
         // append slideshow
