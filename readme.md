@@ -35,9 +35,15 @@ default: 'fade'
 options: 'fade', 'uncover'
 ```
 **filebase**
-Type base of all files in you directoy. Ex: for files slide_01.jpg, slide_02.jpg and slide_03.jpg the filebase would be 'slide_' and for img_01.png, img_02.png and img_03.png the filebase would be 'img_'.
+Type base of all files in you directoy. Ex: for files slide_1.jpg, slide_2.jpg and slide_3.jpg the filebase would be 'slide_' and for img_1.png, img_2.png and img_3.png the filebase would be 'img_'.
 ```
 default: 'slide_'
+options: string
+```
+**padleft**
+String to padleft slideNumber. Ex: if your file names have leading zeros slide_01.jpg or 01.jpg you should use '00' value in padleft.
+```
+default: ''
 options: string
 ```
 **extension**
